@@ -1,8 +1,16 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from dotenv import dotenv_values
 
-def create_app(settings_module):
-    print(f'Hi {settings_module}')
+db = SQLAlchemy()
+
+def create_app():
     app = Flask(__name__)
+    config = dotenv_values(".env")
+    app.config['SQLALCHEMY_DATABASE_URI'] = config['DATABASE_URI']
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.init_app(app)
 
     from .main import main
     app.register_blueprint(main)
