@@ -36,6 +36,21 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
   
 4. Instalar librerias:
   * `pip install -r requirements.txt`
+
+5. Crea un archivo `.env` y pega las variables de entorno del archivo `.env-example`.
+
+7. Crea base de datos en Postgres con el nombre dado en el archivo `.env` y crea ejecuta en terminal de postgres:
+  * `\c {DATABASE}`
+  * `CREATE TABLE joke (id serial PRIMARY KEY, description TEXT, type VARCHAR(255));`
+
+6. Cambia las siguientes variables:
+* Windows:
+  Ejecutar en terminal
+   * `set FLASK_ENV=development`
+   * `set FLASK_APP=src\entrypoint`
+  * Linux\Mac:
+   * `export FLASK_ENV=development`
+   * `export FLASK_APP=src\entrypoint`
   
 5. Iniciar el servidor:
   * `flask run`
@@ -43,17 +58,6 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 ## Pre-requisitos 📋
 
 * Python 3
-
-## Despliegue 📦
-
-
-### Link de despliegue:
-
-* [Link despliegue Heroku](https://warm-beyond-31783.herokuapp.com/)
-
-### Documentacion API
-
-* [Documentación en Postman](https://documenter.getpostman.com/view/15367532/TzzANHKk)
 
 ### Construido con 🛠️
 
